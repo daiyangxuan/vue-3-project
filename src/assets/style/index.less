@@ -1,0 +1,190 @@
+@import "normalize.css";
+@import "ant-design-vue/dist/antd.less";
+@import "./theme.less";
+
+#app {
+  height: 100vh;
+  width: 100vw;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  //background: rgb(189, 140, 70);
+  background: #bec0c2;
+  border-radius: 4px;
+}
+
+.ant-btn {
+  min-width: 64px;
+  padding-top: 0;
+  padding-bottom: 0;
+  &-link {
+    padding: 0 !important;
+    min-width: 0;
+  }
+  & + .ant-btn {
+    margin-left: 12px !important;
+  }
+}
+
+.ant-form-item-with-help {
+  margin-bottom: 24px !important;
+  .ant-form-item-explain {
+    position: absolute;
+    top: 35px;
+  }
+}
+
+.sj-dropdown-menu {
+  .ant-popover-inner-content {
+    padding: 0;
+  }
+}
+
+.ant-card {
+  border-color: @border-color-base;
+  &-head {
+    border-color: @border-color-base;
+    margin-bottom: 0;
+    &-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: @text-color;
+      line-height: 20px;
+    }
+  }
+  &-extra {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0 !important;
+    color: @text-color;
+  }
+}
+
+.ant-modal-confirm {
+  .ant-modal-confirm-body {
+    .ant-modal-confirm-title {
+      font-size: 16px;
+    }
+    .ant-modal-confirm-content {
+      color: @text-color;
+    }
+  }
+}
+.ant-modal {
+  &-body {
+    background: rgba(245, 247, 250, 0.8);
+    font-size: 14px !important;
+  }
+  & .ant-modal-title {
+    font-size: 16px !important;
+    font-weight: 700;
+  }
+  & .ant-input,
+  & .ant-select-selection-search,
+  & .ant-picker,
+  & .ant-select,
+  & .ant-picker-input > input,
+  & .ant-btn {
+    font-size: 14px;
+  }
+}
+.ant-drawer {
+  &-header-title {
+    flex-direction: row-reverse;
+    .ant-drawer-title {
+      font-size: 16px;
+    }
+  }
+  &-footer {
+    text-align: right;
+    padding: 16px 24px;
+  }
+}
+
+.ant-tree-select-dropdown {
+  padding: 8px 0;
+
+  .ant-select-tree {
+    &-treenode {
+      padding: 0;
+      &:hover {
+        background: #f5f5f5;
+      }
+
+      .ant-select-tree-node-content-wrapper {
+        .text-ellipsis();
+      }
+    }
+    //展开按钮
+    &-switcher {
+      line-height: 30px;
+    }
+    &-node-content-wrapper {
+      border-radius: 0;
+      min-height: 30px;
+      line-height: 30px;
+      &.ant-select-tree-node-selected,
+      &:hover {
+        background: transparent;
+      }
+    }
+    &-treenode-selected {
+      background: rgba(24, 144, 255, 0.1);
+    }
+  }
+}
+
+.menu-item-active {
+  background: #3f495c !important;
+  opacity: 0.96;
+  &:after {
+    width: 3px;
+    background: #0091ff;
+    transform: none !important;
+    opacity: 0.96 !important;
+  }
+}
+.ag-theme-alpine .ag-row-selected,
+.ant-table-tbody > tr.ant-table-row-selected > td {
+  background-color: #e6f7ff !important;
+}
+.ag-theme-alpine .ag-row-hover,
+.ant-table-tbody > tr.ant-table-row:hover > td,
+.ant-table-tbody > tr > td.ant-table-cell-row-hover {
+  background-color: #e8e8e8 !important;
+}
+.ag-theme-alpine .ag-checkbox-input-wrapper {
+  &:not(.ag-checked):not(.ag-indeterminate),
+  &:not(.ag-indeterminate):not(.ag-checked) {
+    &::after,
+    &:after {
+      content: "";
+      border: 1px solid #d9d9d9;
+      width: 16px;
+      height: 16px;
+      border-radius: 2px;
+    }
+  }
+}
+
+// 输入框/选择框/数字输入框 padding:左右为7
+.ant-input,
+.ant-input-group-addon,
+.ant-input-number-input,
+.ant-input-number-group-addon,
+.ant-select .ant-select-selector,
+.ant-select-single:not(.ant-select-customize-input) .ant-select-selector {
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.ant-spin-nested-loading,
+.ant-spin-nested-loading .ant-spin-container {
+  height: 100%;
+}
