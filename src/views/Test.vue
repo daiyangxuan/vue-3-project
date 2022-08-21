@@ -1,18 +1,15 @@
 <template>
-  <div>{{ route.fullPath }}</div>
+  <div>{{ route.fullPath.slice(1) }}</div>
 </template>
 
-<script>
+<script setup lang="ts">
 import {useRoute} from 'vue-router'
-export default {
-  name: 'Test',
-  setup() {
-    const route = useRoute()
-    return {
-      route,
-    }
-  },
-}
+import useAsyncRouterView from '@vue3Base/useAsyncRouterView'
+
+const route = useRoute()
+useAsyncRouterView(async tab => {
+  tab.label = `${route.fullPath.slice(1)}`
+})
 </script>
 
 <style scoped></style>
